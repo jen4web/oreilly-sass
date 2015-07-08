@@ -1,0 +1,157 @@
+/* 
+  declare border-box sizing
+  http://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
+*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Cabin", Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Niconne', cursive;
+  font-weight: normal;
+  color: #c80060;
+}
+
+a {
+  color: #00c4c7;
+}
+a:hover {
+  color: #c80060;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+header a {
+  text-align: center;
+  display: block;
+}
+
+nav {
+  background: url(../img/scallop.png) repeat-x;
+  /* splits nav into 2 columns
+  http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
+}
+nav ul {
+  list-style-type: none;
+  background-color: #e3be9f;
+  padding: 0.75em;
+  margin: 0.75em 0 0 0;
+  border-bottom: 3px solid #cc8850;
+  overflow: auto;
+}
+nav li:nth-child(even) {
+  width: 50%;
+  float: right;
+  padding: 0.5em;
+}
+nav li:nth-child(odd) {
+  width: 50%;
+  float: left;
+  padding: 0.5em;
+}
+nav a {
+  color: #c80060;
+  text-decoration: none;
+  display: block;
+  padding-left: 3%;
+}
+nav a:hover {
+  color: #00c4c7;
+}
+
+div.row {
+  background-color: #fff6e0;
+  border-bottom-left-radius: 0.625rem;
+  border-bottom-right-radius: 0.625rem;
+  padding: 1em;
+}
+
+[class*='col'] {
+  margin-left: 0;
+}
+
+.col-1,
+.col-3 {
+  width: 96.66666%;
+}
+
+article img {
+  border-radius: 0.625rem;
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 20em;
+}
+
+[class*='sidebar'] {
+  border: 1px solid #00c4c7;
+  border-radius: 0.625rem;
+  margin-bottom: 1em;
+  margin-top: 2.5em;
+}
+[class*='sidebar'] h3 {
+  margin: 0;
+  color: white;
+  background-color: #00c4c7;
+  border-top-left-radius: 0.625rem;
+  border-top-right-radius: 0.625rem;
+  padding-left: 0.5em;
+}
+[class*='sidebar'] img {
+  border-radius: 0px 0px 0.625rem 0.625rem;
+  width: 100%;
+  max-width: 250px;
+  display: block;
+  /* without this, there is a gap between the image and border -- space for descenders in text, for inline elements */
+}
+
+.sidebar-secondary {
+  border-color: #c80060;
+}
+.sidebar-secondary h3 {
+  background-color: #c80060;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  padding: 0 1em;
+}
+blockquote cite {
+  text-transform: uppercase;
+  font-style: normal;
+  padding: 0 1em 1em 1em;
+  display: block;
+}
+
+footer {
+  background-color: #00CDD1;
+  color: white;
+  clear: both;
+  padding: 0 0.5em 3em 0.5em;
+  border-top: 1px solid #00CDD1;
+}
+footer p {
+  text-align: center;
+}
+footer img {
+  width: 52px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}

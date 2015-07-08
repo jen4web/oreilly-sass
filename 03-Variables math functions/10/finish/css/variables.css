@@ -1,0 +1,31 @@
+/* what colors are strong and h2? */
+strong {
+  color: #00c4c7;
+}
+
+h2 {
+  color: #00c4c7;
+}
+
+body {
+  font-family: Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #fff6e0;
+  padding: 1em;
+  border-radius: 0.625em;
+}
+
+a {
+  color: #00c4c7;
+}
+
+a:hover {
+  color: #c80060;
+}

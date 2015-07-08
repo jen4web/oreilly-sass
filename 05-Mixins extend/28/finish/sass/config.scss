@@ -1,0 +1,168 @@
+//Variables 
+$primary-color: #00c4c7;
+$secondary-color: #c80060;
+$accent-color: #cc8850;
+
+//commonly used measurements
+$border-radius: 0.625rem; //10px
+$standard-space: 1em;
+
+/* 
+  declare border-box sizing
+  http://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Cabin", Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Niconne', cursive;
+  font-weight: normal;
+  color: $secondary-color;
+}
+
+a {
+  color: $primary-color;
+}
+a:hover {
+  color: $secondary-color;
+  text-decoration: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+header a {
+  text-align: center;
+  display: block;
+}
+
+nav {
+  background: url(../img/scallop.png) repeat-x;
+  /* splits nav into 2 columns
+  http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
+}
+nav ul {
+  list-style-type: none;
+  background-color: #e4c0a3;
+  padding: 0.75em;
+  margin: 0.75em 0 0 0;
+  border-bottom: 3px solid $accent-color;
+  overflow: auto;
+}
+nav li:nth-child(even) {
+  width: 50%;
+  float: right;
+  padding: 0.5em;
+}
+nav li:nth-child(odd) {
+  width: 50%;
+  float: left;
+  padding: 0.5em;
+}
+nav a {
+  color: $secondary-color;
+  text-decoration: none;
+  display: block;
+  padding-left: 3%;
+}
+nav a:hover {
+  color: $primary-color;
+}
+
+div.row {
+  background-color: #fff6e0;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  padding: 1em;
+}
+
+[class*='col'] {
+  margin-left: 0;
+}
+
+.col-1,
+.col-3 {
+  width: 96.66666%;
+}
+
+article img {
+  border-radius: $border-radius;
+  display: block;
+  margin-bottom: $standard-space;
+  width: 100%;
+  max-width: 320px;
+}
+
+[class*='sidebar'] {
+  border: 1px solid $primary-color;
+  border-radius: $border-radius;
+  margin-bottom: $standard-space;
+  margin-top: 2.5em;
+}
+[class*='sidebar'] h3 {
+  margin: 0;
+  color: white;
+  background-color: $primary-color;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  padding-left: 0.5em;
+}
+[class*='sidebar'] img {
+  border-radius: 0px 0px $border-radius $border-radius;
+  width: 100%;
+  max-width: 250px;
+  display: block;
+  /* without this, there is a gap between the image and border -- space for descenders in text, for inline elements */
+}
+
+.sidebar-secondary {
+  border-color: $secondary-color;
+}
+.sidebar-secondary h3 {
+  background-color: $secondary-color;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  padding: 0 $standard-space;
+}
+
+blockquote cite {
+  text-transform: uppercase;
+  font-style: normal;
+  padding: 0 $standard-space $standard-space $standard-space;
+  display: block;
+}
+
+footer {
+  background-color: #00CDD1;
+  color: white;
+  clear: both;
+  padding: 0 0.5em 3em 0.5em;
+  border-top: 1px solid #00CDD1;
+}
+footer p {
+  text-align: center;
+}
+footer img {
+  width: 52px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}

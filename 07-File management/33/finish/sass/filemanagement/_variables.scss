@@ -1,0 +1,20 @@
+//Variables 
+$primary-color: #00c4c7;
+$secondary-color: #c80060;
+$accent-color: #cc8850;
+
+//commonly used measurements
+$border-radius: 0.625rem; //10px
+$standard-space: 1em;
+$half-space: $standard-space * 0.5;
+$base-font-size: 16px;
+
+//media query values
+$small: 34.375em; //550px
+$sm-medium: 53.063em; //849px
+$medium: 53.125em; //850px
+
+//custom function 
+@function pxtoem($px, $base: $base-font-size) {
+  @return($px/$base) * 1em;
+}

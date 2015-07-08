@@ -1,0 +1,62 @@
+h1 {
+  background-color: rgba(0, 146, 148, 0.5);
+  color: white;
+}
+
+h2 {
+  background-color: #fb0078;
+  color: white;
+}
+
+h3 {
+  background-color: rgba(30, 167, 169, 0.5);
+  color: white;
+}
+
+h4 {
+  background-color: rgba(238, 133, 46, 0.2);
+  color: white;
+}
+
+h5 {
+  background-color: #00c4c7;
+  color: white;
+}
+
+.original-blue {
+  background-color: rgba(0, 196, 199, 0.5);
+  color: white;
+}
+
+.original-pink {
+  background-color: #c80060;
+  color: white;
+}
+
+.original-brown {
+  background-color: #cc8850;
+  color: white;
+}
+
+body {
+  font-family: Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #fff6e0;
+  padding: 1em;
+  border-radius: 0.625em;
+}
+
+a {
+  color: #00c4c7;
+}
+
+a:hover {
+  color: #c80060;
+}

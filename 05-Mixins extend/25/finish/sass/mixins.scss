@@ -1,0 +1,63 @@
+$primary-color: #00c4c7;
+$secondary-color: #c80060;
+$heading-font: Georgia, serif;
+
+@mixin std-heading {
+	color: white;
+	font: {
+		weight: normal;
+		family: $heading-font;
+		style: italic;
+	}
+}
+@mixin bkgd-gradient($color1, $color2) {
+	background: -webkit-linear-gradient($color1, $color2); /* Chrome 10+, Saf5.1+ */
+  	background: -moz-linear-gradient($color1, $color2); /* FF3.6+ */
+  	background: -ms-linear-gradient($color1, $color2); /* IE10 */
+ 	background: -o-linear-gradient($color1, $color2); /* Opera 11.10+ */
+  	background: linear-gradient($color1, $color2); /* W3C */
+}
+
+h1, h3, h5 {
+	@include std-heading;
+	background-color: $primary-color;
+}
+h2, h4 {
+	@include std-heading;
+	background-color: $secondary-color;
+}
+
+
+
+
+
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+	background-image: url(../img/clouds.png);
+	margin: 0;
+	padding: 0; 
+}
+article {
+	width: 600px;
+	margin: 0 auto;
+	background-color: #fff6e0;
+	padding: 1em;
+	border-radius: 0.625em;
+	$primary-color: lighten(desaturate($primary-color, 50%), 40%);
+	@include bkgd-gradient($primary-color, white);
+}
+.demogradient {
+	width: 200px;
+	height: 200px;
+	@include bkgd-gradient($secondary-color, #e6bf98);
+}
+a {
+	color: #00c4c7;
+}
+a:hover {
+	color: #c80060;
+}
+h1 {
+	//color: #c80060;
+}

@@ -1,0 +1,29 @@
+/* Large devices (large desktops, 850px and up) */
+@include mq($medium){ 
+  .wrapper {
+      width: 97%;
+      max-width: 75em; //1200px
+      float: none;
+  }
+  %columns {
+    float: left;
+    margin-left: 3.33333%;
+    min-height: 1px;
+  }
+  .col-1 {
+    @extend %columns;
+    width: 20.83333%;
+  }
+  .col-3 {
+    @extend %columns;
+    width: 69.16665%;
+  }
+  h2 {
+    font-size: 3em;
+    border-bottom: 2px dotted $secondary-color;
+  }
+  h3 {
+    font-size: 2em;
+  }
+
+}

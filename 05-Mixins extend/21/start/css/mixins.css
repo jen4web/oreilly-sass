@@ -1,0 +1,48 @@
+h1, h3, h5 {
+  color: white;
+  font-weight: normal;
+  font-family: Georgia, serif;
+  font-style: italic;
+  background-color: #00c4c7;
+}
+
+h2, h4 {
+  color: white;
+  font-weight: normal;
+  font-family: Georgia, serif;
+  font-style: italic;
+  background-color: #c80060;
+}
+
+body {
+  font-family: Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #fff6e0;
+  padding: 1em;
+  border-radius: 0.625em;
+  background: -webkit-linear-gradient(#afe3e4, white);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(#afe3e4, white);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(#afe3e4, white);
+  /* IE10 */
+  background: -o-linear-gradient(#afe3e4, white);
+  /* Opera 11.10+ */
+  background: linear-gradient(#afe3e4, white);
+  /* W3C */
+}
+
+a {
+  color: #00c4c7;
+}
+
+a:hover {
+  color: #c80060;
+}

@@ -1,0 +1,311 @@
+//Variables 
+$primary-color: #00c4c7;
+$secondary-color: #c80060;
+$accent-color: #cc8850;
+
+//commonly used measurements
+$border-radius: 0.625rem; //10px
+$standard-space: 1em;
+$half-space: $standard-space * 0.5;
+$base-font-size: 16px;
+
+//media query values
+$small: 34.375em; //550px
+$sm-medium: 53.063em; //849px
+$medium: 53.125em; //850px
+
+//custom function 
+@function pxtoem($px, $base: $base-font-size) {
+  @return($px/$base) * 1em;
+}
+
+//mixins 
+@mixin navstyle ($width, $float, $padding) {
+  width: $width;
+  float: $float;
+  padding: $padding;
+}
+@mixin floatme($float: right){
+  float: $float;
+  @if $float == right {
+    margin: 0 0 $standard-space $standard-space;
+  }
+  @else if $float == left {
+    margin: 0 $standard-space $standard-space 0;
+  }
+  @else {
+    margin: 0 auto;
+    display: block;
+  }
+}
+@mixin mq($breakpoint: $small){
+  @if $breakpoint == $small {
+    @media (min-width: $small) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $sm-medium {
+    @media (min-width: $small) and (max-width: $sm-medium) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $medium) {
+      @content;
+    }
+  }
+} //end mq
+
+
+/* 
+  declare border-box sizing
+  http://www.paulirish.com/2012/box-sizing-border-box-ftw/ 
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Cabin", Arial, Geneva, sans-serif;
+  background-image: url(../img/clouds.png);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Niconne', cursive;
+  font-weight: normal;
+  color: $secondary-color;
+}
+
+a {
+  color: $primary-color;
+
+  &:hover {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+header a {
+  text-align: center;
+  display: block;
+}
+
+nav {
+  background: url(../img/scallop.png) repeat-x;
+  /* splits nav into 2 columns
+  http://stackoverflow.com/questions/13104818/simple-2-column-navigation-with-css-and-a-single-list */
+
+  ul {
+    list-style-type: none;
+    background-color: lighten($accent-color, 20%);
+    padding: 0.75em;
+    margin: 0.75em 0 0 0;
+    border-bottom: 3px solid $accent-color;
+    overflow: auto;
+  }
+  li {
+      &:nth-child(even) {
+      @include navstyle(50%, right, $half-space);
+    }
+    &:nth-child(odd) {
+      @include navstyle(50%, left, $half-space);
+    }
+  }
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    display: block;
+    padding-left: 3%;
+  
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+div.row {
+  background-color: #fff6e0;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  padding: $standard-space;
+}
+
+[class*='col'] {
+  margin-left: 0;
+}
+
+.col-1,
+.col-3 {
+  width: 96.66666%;
+}
+
+article img {
+  border-radius: $border-radius;
+  display: block;
+  margin-bottom: $standard-space;
+  width: 100%;
+  max-width: pxtoem(320px); //20em
+}
+
+[class*='sidebar'] {
+  border: 1px solid $primary-color {
+    radius: $border-radius;
+  }
+  margin: {
+    bottom: $standard-space;
+    top: 2.5em;
+  }
+
+    h3 {
+      margin: 0;
+      color: white;
+      background-color: $primary-color;
+      border-top: {
+        left-radius: $border-radius;
+        right-radius: $border-radius;
+      }
+      padding-left: $half-space;
+    }
+    img {
+      border-radius: 0px 0px $border-radius $border-radius;
+      width: 100%;
+      max-width: 250px;
+      display: block;
+      /* without this, there is a gap between the image and border -- space for descenders in text, for inline elements */
+    }
+}
+
+.sidebar-secondary {
+  border-color: $secondary-color;
+
+  h3 {
+    background-color: $secondary-color;
+  }
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+  padding: 0 $standard-space;
+
+  cite {
+    text-transform: uppercase;
+    font-style: normal;
+    padding: 0 $standard-space $standard-space $standard-space;
+    display: block;
+  }
+}
+
+footer {
+  background-color: #00CDD1;
+  color: white;
+  clear: both;
+  padding: 0 $half-space 3em $half-space;
+  border-top: 1px solid #00CDD1;
+    p {
+        text-align: center;
+      }
+    img {
+      width: 52px;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+/* for tablets and desktops, min width 550px */
+@include mq($small) { 
+  /* clearing hack */
+  .row:before, 
+  .row:after {
+      content:"";
+      display: table;
+      clear:both;
+  }
+  .floatleft {
+    @include floatme(left);
+  }
+  .floatright {
+    @include floatme;
+  }
+  .floatnone {
+    @include floatme(none);
+  }
+  header a {
+    text-align: left;
+  }
+  div.row {
+    padding: 0;
+  }
+  nav li,
+  nav li:nth-child(even),
+  nav li:nth-child(odd) {
+    display: inline-block;
+    @include navstyle(auto, none, 0);
+  }
+  nav a {
+      padding: 0em $standard-space;
+  }
+}
+
+/* Small devices (tablets, 551px-849px) */
+@include mq($sm-medium) { 
+  .wrapper {
+      width: 97%;
+      max-width: 47.938em; //767 px
+      float: none;
+  }
+  .col-1,
+  .col-3 {
+    width: 96.66666%;
+  }
+  div.row {
+    padding: 0 ($standard-space * 2);
+  }
+  [class*='sidebar'] {
+    float: left;
+    width: 47%;
+    margin-right: 3%;
+  }
+}
+/* Large devices (large desktops, 850px and up) */
+@include mq($medium){ 
+  .wrapper {
+      width: 97%;
+      max-width: 75em; //1200px
+      float: none;
+  }
+  %columns {
+    float: left;
+    margin-left: 3.33333%;
+    min-height: 1px;
+  }
+  .col-1 {
+    @extend %columns;
+    width: 20.83333%;
+  }
+  .col-3 {
+    @extend %columns;
+    width: 69.16665%;
+  }
+  h2 {
+    font-size: 3em;
+    border-bottom: 2px dotted $secondary-color;
+  }
+  h3 {
+    font-size: 2em;
+  }
+
+}

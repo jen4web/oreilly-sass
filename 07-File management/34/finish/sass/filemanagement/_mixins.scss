@@ -1,0 +1,37 @@
+//mixins 
+@mixin navstyle ($width, $float, $padding) {
+  width: $width;
+  float: $float;
+  padding: $padding;
+}
+@mixin floatme($float: right){
+  float: $float;
+  @if $float == right {
+    margin: 0 0 $standard-space $standard-space;
+  }
+  @else if $float == left {
+    margin: 0 $standard-space $standard-space 0;
+  }
+  @else {
+    margin: 0 auto;
+    display: block;
+  }
+}
+@mixin mq($breakpoint: $small){
+  @if $breakpoint == $small {
+    @media (min-width: $small) {
+      @content;
+    }
+  }
+  @else if $breakpoint == $sm-medium {
+    @media (min-width: $small) and (max-width: $sm-medium) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: $medium) {
+      @content;
+    }
+  }
+} //end mq
+
